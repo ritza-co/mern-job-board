@@ -2,7 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+const path = __dirname + '/app/views/';
+
 const app = express();
+
+app.use(express.static(path));
 
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -18,7 +22,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to mern job board application." });
+  //res.json({ message: "Welcome to mern stack job board application." });
+  res.sendFile(path + "index.html");
 });
 
 require("./app/routes/job.routes")(app);
