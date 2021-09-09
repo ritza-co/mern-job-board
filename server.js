@@ -8,8 +8,6 @@ const app = express();
 
 app.use(express.static(path));
 
-app.use(cors(corsOptions));
-
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 
