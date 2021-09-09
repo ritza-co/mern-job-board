@@ -8,6 +8,12 @@ const app = express();
 
 app.use(express.static(path));
 
+var corsOptions = {
+  origin: "http://localhost:3000"
+};
+
+app.use(cors(corsOptions));
+
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 
