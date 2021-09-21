@@ -6,7 +6,7 @@ const ViewJobs = () => {
     const [jobsStateArray, setJobsStateArray] = useState([])
 
     useEffect(() => {          
-        axios.get('https://mern-job-board-xnqpks.codecapsules.co.za/api/jobs/')
+        axios.get('/api/jobs/')
         .then(response => {
             console.log(response)
             setJobsStateArray(response.data)

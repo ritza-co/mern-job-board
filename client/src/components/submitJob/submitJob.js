@@ -11,7 +11,7 @@ const SubmitJob = () => {
     const postJob = (e) => {
         const data = { title: jobTitle, description: jobDescription, location: jobLocation,
                         salary: jobSalary }
-        axios.post('https://mern-job-board-xnqpks.codecapsules.co.za/api/jobs/', data)
+        axios.post('/api/jobs/', data)
         .then(response => {
           console.log(response)
         })
